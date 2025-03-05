@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Scheduler Demo</title>
+</head>
+<body>
+   <h1>Flask Scheduler</h1>
+   <table id="data-table">
+       <thead>
+           <tr>
+               <th>Message</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td></td>
+           </tr>
+       </tbody>
+   </table>
+   
+   <script>
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                for (i = 0; i < data.length; i++) {
+                    const table = document.getElementById('data-table');
+                    const row = table.insertRow(1);
+                    const cell = row.insertCell(0);
+                    cell.innerHTML = data[i].message;
+
+                }
+            });
+   </script>
+</body>
+</html>

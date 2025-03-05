@@ -1,0 +1,11 @@
+# CREST GPU environment
+name: flask_ex
+
+channels:
+ - defaults
+ - conda-forge
+
+dependencies:
+  - python=3.10
+  - flask
+  - flask-apscheduler
